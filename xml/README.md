@@ -75,3 +75,14 @@ for {
     }
 }
 ```
+
+large file:
+
+```go
+f, _ := os.Open("big.xml")
+defer f.Close()
+
+dec := xml.NewDecoder(f)
+var v MyStruct
+dec.Decode(&v)
+```
