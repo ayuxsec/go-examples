@@ -1,6 +1,7 @@
 package main
 
 import (
+	"time"
 	"fmt"
 )
 
@@ -17,5 +18,6 @@ func main() {
 }
 
 func add(x, y int, c chan int) {
+	time.Sleep(3 * time.Second)
 	c <- x + y // send to channel
 }
